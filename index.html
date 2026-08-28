@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>יונתן — עיצוב ובניית אתרים לעסקים</title>
+<meta name="description" content="עיצוב ובניית אתרים לעסקים קטנים: דף נחיתה, אתר תדמית ושדרוג אתר קיים.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="יונתן — עיצוב ובניית אתרים לעסקים">
+<meta property="og:description" content="דף נחיתה, אתר תדמית ושדרוג אתר קיים.">
+<meta property="og:image" content="og-card.jpg">
+<meta property="og:locale" content="he_IL">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">דלגו לתוכן הראשי</a>
+
+<header class="nav" id="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="#main">יונתן</a>
+    <nav class="nav__links" aria-label="ניווט ראשי">
+      <a href="#work">עבודות</a>
+      <a href="#tracks">מסלולים</a>
+      <a href="#how">איך זה עובד</a>
+      <a href="#about">אודות</a>
+    </nav>
+    <a class="nav__cta" href="#contact">צרו קשר</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <p class="hero__kicker">עיצוב ובניית אתרים לעסקים</p>
+  <h1 class="hero__title">אתר שנראה טוב<br><span class="l2">ועושה סדר בעסק.</span></h1>
+
+  <figure class="hero__shot" id="film">
+    <div class="film__stage">
+      <!-- BEFORE: the real old Wix site, from the pre-rebuild scrape -->
+      <picture class="film__old">
+        <source srcset="img/riki-old.webp" type="image/webp">
+        <img src="img/riki-old.jpg" width="1420" height="900" fetchpriority="high"
+             alt="האתר הישן של ריקי יעקבס — תבנית וויקס לפני הבנייה מחדש">
+      </picture>
+      <!-- AFTER: the new site, wiped in as three strips -->
+      <div class="film__strip film__strip--a" aria-hidden="true"></div>
+      <div class="film__strip film__strip--b" aria-hidden="true"></div>
+      <div class="film__strip film__strip--c" aria-hidden="true"></div>
+      <span class="film__edge" aria-hidden="true"></span>
+      <!-- final crisp frame for the docked state + no-JS/reduced-motion -->
+      <picture class="film__new">
+        <source srcset="img/riki-site.webp" type="image/webp">
+        <img src="img/riki-site.jpg" width="1420" height="900" loading="eager"
+             alt="האתר החדש של ריקי יעקבס — עמוד הבית אחרי הבנייה מחדש">
+      </picture>
+    </div>
+    <figcaption class="film__caps" aria-hidden="true">
+      <span class="film__cap" data-cap="0">האתר הישן</span>
+      <span class="film__cap" data-cap="1">נבנה מחדש</span>
+      <span class="film__cap" data-cap="2">טופס שמתחבר לוואטסאפ</span>
+      <span class="film__cap" data-cap="3">מותאם לטלפון</span>
+    </figcaption>
+  </figure>
+
+  <div class="hero__foot">
+    <p class="hero__sub">מספרים לי על העסק ועל מה שצריך, ואני חוזר עם כיוון ראשוני בוואטסאפ.</p>
+    <div class="hero__actions">
+      <a class="pill" href="#contact">בואו נדבר על האתר</a>
+      <a class="textlink" href="#work">לצפייה בעבודה <span aria-hidden="true">›</span></a>
+    </div>
+    <p class="hero__note">למעלה: האתר של ריקי יעקבס, פסיכולוגית קלינית — אתר חדש במקום אחד שכבר לא התאים לעסק.</p>
+  </div>
+</section>
+
+<div class="marquee-clip" aria-hidden="true">
+  <div class="marquee">
+    <div class="marquee__track">
+      <span>עיצוב · בנייה · תוכן · פניות ·&nbsp;</span>
+      <span>עיצוב · בנייה · תוכן · פניות ·&nbsp;</span>
+      <span>עיצוב · בנייה · תוכן · פניות ·&nbsp;</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== WORK ===================== -->
+<section class="band band--case" id="work">
+  <div class="wrap">
+    <div class="bandhead">
+      <h2 class="title">ריקי יעקבס.</h2>
+      <span class="bandhead__n" dir="ltr">(01)</span>
+    </div>
+    <div class="case">
+      <div class="case__text">
+        <p class="lede">
+          לריקי היה אתר ישן שכבר לא התאים לעסק שלה. בניתי אותו מחדש בעיצוב נקי,
+          ברור ונוח יותר לשימוש, במחשב ובטלפון.
+        </p>
+        <a class="textlink" href="#" data-needs-url="riki-live-url">לצפייה באתר החי <span aria-hidden="true">›</span></a>
+      </div>
+      <figure class="shot">
+        <picture>
+          <source srcset="img/riki-site.webp" type="image/webp">
+          <img src="img/riki-site.jpg" width="1420" height="900" loading="lazy"
+               alt="צילום מסך של האתר של ריקי יעקבס">
+        </picture>
+        <figcaption><strong>ריקי יעקבס</strong><span>פסיכולוגית קלינית · עיצוב ובנייה מחדש</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRACKS ===================== -->
+<section class="band band--grey" id="tracks">
+  <div class="wrap">
+    <div class="bandhead">
+      <h2 class="title">בוחרים מה צריך.</h2>
+      <span class="bandhead__n" dir="ltr">(02)</span>
+    </div>
+    <p class="lede">משם אני לוקח את זה.</p>
+
+    <div class="cards">
+      <article class="card">
+        <h3>דף נחיתה</h3>
+        <p class="card__sub">עמוד אחד שמציג את העסק ומוביל את הגולש לפעולה ברורה.</p>
+        <ul>
+          <li>עיצוב שמתאים לעסק</li>
+          <li>טקסט ברור, בלי ניסוחים מנופחים</li>
+          <li>טופס פנייה שמתחבר לוואטסאפ</li>
+          <li>התאמה מלאה לטלפון ולמחשב</li>
+        </ul>
+        <a class="textlink" href="#contact" data-track="דף נחיתה">אני רוצה דף נחיתה <span aria-hidden="true">›</span></a>
+      </article>
+
+      <article class="card card--pick">
+        <p class="card__flag">הכי מבוקש</p>
+        <h3>אתר תדמית</h3>
+        <p class="card__sub">אתר מלא שמסביר מי העסק, מה הוא מציע ולמה לבחור דווקא בו.</p>
+        <ul>
+          <li>תכנון מבנה האתר ביחד</li>
+          <li>בדיקה של המתחרים לפני שמתחילים לעצב</li>
+          <li>עמודי שירותים, אודות, עבודות ויצירת קשר</li>
+          <li>אתר מהיר ונוח בכל מכשיר</li>
+        </ul>
+        <a class="textlink" href="#contact" data-track="אתר תדמית">אני רוצה אתר תדמית <span aria-hidden="true">›</span></a>
+      </article>
+
+      <article class="card">
+        <h3>שדרוג אתר קיים</h3>
+        <p class="card__sub">יש אתר מיושן שכבר לא מייצג את העסק? אפשר לשמור את התוכן ולבנות סביבו אתר חדש.</p>
+        <ul>
+          <li>עיצוב מחדש של האתר</li>
+          <li>שיפור חוויית השימוש בטלפון</li>
+          <li>סידור הכותרות, הכפתורים והעמודים</li>
+          <li>העברת התכנים מהאתר הקיים</li>
+        </ul>
+        <a class="textlink" href="#contact" data-track="שדרוג אתר קיים">אני רוצה לשדרג את האתר <span aria-hidden="true">›</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOW ===================== -->
+<section class="band" id="how">
+  <div class="wrap">
+    <div class="bandhead">
+      <h2 class="title">שלושה שלבים, בלי הפתעות.</h2>
+      <span class="bandhead__n" dir="ltr">(03)</span>
+    </div>
+
+    <ol class="steps">
+      <li>
+        <span class="steps__n" aria-hidden="true">1</span>
+        <h3>משאירים פרטים</h3>
+        <p>אפשר למלא את הטופס למטה או לשלוח לי הודעה ישירות בוואטסאפ. זה לוקח פחות מדקה. אני עונה בעצמי, לא דרך בוט.</p>
+      </li>
+      <li>
+        <span class="steps__n" aria-hidden="true">2</span>
+        <h3>מדברים על העסק</h3>
+        <p>בשיחה קצרה אני שומע מה העסק עושה, מה חסר באתר הנוכחי ומה רוצים להשיג. אחר כך אני שולח כיוון ראשוני והצעת מחיר מסודרת.</p>
+      </li>
+      <li>
+        <span class="steps__n" aria-hidden="true">3</span>
+        <h3>בונים ומעלים לאוויר</h3>
+        <p>אני מעצב, בונה ושולח עדכונים לאורך הדרך. בסוף התהליך מקבלים אתר חי, מהיר ומוכן לעבודה.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="band band--grey" id="about">
+  <div class="wrap wrap--narrow">
+    <div class="bandhead">
+      <h2 class="title">נעים להכיר, אני יונתן.</h2>
+      <span class="bandhead__n" dir="ltr">(04)</span>
+    </div>
+    <p class="prose">
+      אני בן 13 ובונה אתרים לעסקים. אני יודע שהגיל שלי עשוי להפתיע, ולכן אני
+      מעדיף לתת לעבודה לדבר. בעמוד הזה אפשר לראות אתר שכבר בניתי והמלצה אמיתית
+      שקיבלתי מהלקוחה.
+    </p>
+    <p class="prose">
+      לפני שאני מתחיל לעצב, אני בודק איך העסק נראה היום, מה המתחרים עושים ומה
+      הלקוחות צריכים למצוא באתר. המטרה שלי היא לא רק לבנות משהו יפה, אלא אתר
+      ברור, נוח ומקצועי שמציג את העסק כמו שצריך.
+    </p>
+    <p class="pull">״תשפטו לפי העבודה, לא לפי הגיל.״</p>
+  </div>
+</section>
+
+<!-- ===================== PROOF ===================== -->
+<section class="band" id="proof">
+  <div class="wrap wrap--narrow">
+    <div class="bandhead">
+      <h2 class="title">מה הלקוחה אמרה.</h2>
+      <span class="bandhead__n" dir="ltr">(05)</span>
+    </div>
+    <blockquote class="quote">
+      יונתן, תודה, תענוג לעבוד איתך, עם הגיל הצעיר בא המרץ, מסור, משקיע, זמין,
+      עובד מהר, סבלני לכל השאלות וההתלבטויות ולא לוחץ אם משהו לא מתאים, אלא
+      בודק איתך, ממליצה בחום.
+    </blockquote>
+    <p class="quote__by"><strong>ריקי יעקבס</strong> · פסיכולוגית קלינית</p>
+    <p class="fineprint">ההמלצה מוצגת בדיוק כפי שנכתבה.</p>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="band band--grey" id="contact">
+  <div class="wrap wrap--narrow">
+    <div class="bandhead">
+      <h2 class="title">כמה מילים על העסק.</h2>
+      <span class="bandhead__n" dir="ltr">(06)</span>
+    </div>
+    <p class="lede">
+      ממלאים את הפרטים ונפתחת הודעת וואטסאפ מוכנה לשליחה.
+      אחזור עם כמה שאלות וכיוון ראשוני.
+    </p>
+
+    <form class="form" id="lead-form" novalidate>
+      <fieldset>
+        <legend>מה צריך?</legend>
+        <div class="segs" role="radiogroup" aria-label="סוג הפרויקט">
+          <label><input type="radio" name="need" value="דף נחיתה"><span>דף נחיתה</span></label>
+          <label><input type="radio" name="need" value="אתר תדמית"><span>אתר תדמית</span></label>
+          <label><input type="radio" name="need" value="שדרוג אתר קיים"><span>שדרוג</span></label>
+          <label><input type="radio" name="need" value="עדיין לא החלטתי" checked><span>עוד לא החלטתי</span></label>
+        </div>
+      </fieldset>
+
+      <div class="grid2">
+        <p class="field">
+          <label for="name">שם מלא</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+          <span class="err" id="err-name" aria-live="polite"></span>
+        </p>
+        <p class="field">
+          <label for="phone">טלפון</label>
+          <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" required dir="ltr">
+          <span class="err" id="err-phone" aria-live="polite"></span>
+        </p>
+      </div>
+
+      <p class="field">
+        <label for="about-biz">כמה מילים על העסק</label>
+        <textarea id="about-biz" name="about" rows="3"></textarea>
+      </p>
+
+      <p class="hp" aria-hidden="true">
+        <label for="website">אל תמלאו שדה זה</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </p>
+
+      <button class="pill pill--block" type="submit">שליחה בוואטסאפ</button>
+      <p class="fineprint">הפרטים נשלחים ישירות אליי בוואטסאפ ונשארים ביני לבינכם.</p>
+    </form>
+
+    <div class="direct">
+      <a href="https://wa.me/972522420587" target="_blank" rel="noopener">
+        <span>וואטסאפ</span><b dir="ltr">052-2420587</b>
+      </a>
+      <a href="mailto:yonatan.nuriel7@gmail.com">
+        <span>אימייל</span><b dir="ltr">yonatan.nuriel7@gmail.com</b>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot__mark">יונתן.</p>
+    <p>עיצוב ובניית אתרים לעסקים · האתר שמופיע בעמוד פעיל, וההמלצה מוצגת בדיוק כפי שנכתבה.</p>
+    <p class="foot__legal"><span dir="ltr">© 2026</span> · <a href="accessibility.html">הצהרת נגישות</a></p>
+  </div>
+</footer>
+
+<div class="dock">
+  <a class="pill pill--sm" href="https://wa.me/972522420587" target="_blank" rel="noopener">שליחת הודעה בוואטסאפ</a>
+  <a class="pill pill--sm pill--ghost" href="tel:+972522420587">התקשרו</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js"
+        integrity="sha384-FKTX0CNJ8ngN1oGMBReVu7mvjTJyjFiD5etb1NKnYxc+8eFI2O0KWnksTN+oTFcu"
+        crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"
+        integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc"
+        crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"
+        integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh"
+        crossorigin="anonymous" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
