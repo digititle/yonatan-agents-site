@@ -521,3 +521,9 @@ body.kb-open .dock { display: none; }
   .pill:hover, .card:hover, .direct a:hover, .segs span:hover,
   .hero__shot:hover, .case .shot:hover { transform: none; }
 }
+
+/* price anchor on track cards — the spec's "starting from" requirement */
+.card__price { margin: 0 0 1.25rem; font-size: 1.0625rem; color: var(--ink-2); }
+.card__price span { font-family: var(--font); font-size: 1.375rem; font-weight: 700; color: var(--ink); }
+.card--pick .card__price { color: rgba(255,255,255,.78); }
+.card--pick .card__price span { color: #fff; }
