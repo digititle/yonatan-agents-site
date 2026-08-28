@@ -30,72 +30,24 @@
     items.forEach(el => io.observe(el));
   }
 
-  /* ---------- scroll-film hero: היה / נהיה ---------- */
-  /* Old Wix site is wiped away by the new site in three lagged strips (RTL),
-     then the frame docks into its resting tilt. Pinned scene — created FIRST:
-     ScrollTrigger refresh order is creation order, and ambient triggers made
-     before a pin spacer exist are silently mispositioned. */
-  const film = document.getElementById('film');
-  if (film && !reduced && window.gsap && window.ScrollTrigger) {
+  /* ---------- before/after slider (hero) ---------- */
+  /* The range input is the real control — mouse drag, touch, and keyboard
+     for free. It just mirrors its value into --pos on the stage. */
+  const baStage = document.getElementById('ba-stage');
+  const baRange = document.getElementById('ba-range');
+  if (baStage && baRange) {
+    const setPos = () => baStage.style.setProperty('--pos', baRange.value);
+    baRange.addEventListener('input', setPos);
+    setPos();
+  }
+
+  /* Lenis smoothing, wired into GSAP's ticker */
+  if (!reduced && window.gsap && window.Lenis && window.ScrollTrigger) {
     gsap.registerPlugin(ScrollTrigger);
-
-    // Lenis smoothing, wired into GSAP's ticker (engine.md recipe)
-    if (window.Lenis) {
-      const lenis = new Lenis({ lerp: 0.065, smoothWheel: true });
-      lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add(t => lenis.raf(t * 1000));
-      gsap.ticker.lagSmoothing(0);
-    }
-
-    const isMobile = matchMedia('(max-width: 47.99rem)').matches;
-    const stage = film.querySelector('.film__stage');
-    const newImg = film.querySelector('.film__new');
-    const edge  = film.querySelector('.film__edge');
-    const strips = ['a','b','c'].map(k => film.querySelector('.film__strip--' + k));
-    const caps = [...film.querySelectorAll('.film__cap')];
-
-    // film-on state: strips take over, finished frame hidden until the dock
-    gsap.set(strips, { visibility: 'visible' });
-    gsap.set(edge,   { visibility: 'visible', opacity: 0 });
-    gsap.set(newImg, { autoAlpha: 0 });
-    gsap.set(film,   { rotate: 0, scale: isMobile ? 1 : 1.05 });   // undocked
-
-    // one progress object drives the three strip fronts + the sweep line
-    const front = { a: 100, b: 100, c: 100 };
-    const apply = () => {
-      strips[0].style.clipPath = `inset(0 0 66.7% ${front.a}%)`;
-      strips[1].style.clipPath = `inset(33.3% 0 33.3% ${front.b}%)`;
-      strips[2].style.clipPath = `inset(66.7% 0 0 ${front.c}%)`;
-      edge.style.insetInlineStart = 'auto';
-      edge.style.left = `calc(${front.b}% - 1px)`;                 // wipe front
-    };
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.hero',
-        start: 'top top',
-        end: isMobile ? '+=150%' : '+=280%',
-        pin: true,
-        scrub: 1.4,
-        anticipatePin: 1
-      },
-      defaults: { ease: 'none' }
-    });
-
-    tl.to(caps[0], { opacity: 1, y: 0, duration: .06 }, 0)
-      .to(edge,    { opacity: 1, duration: .04 }, .10)
-      .to(front, { a: 0, duration: .42, onUpdate: apply }, .12)   // top strip leads
-      .to(front, { b: 0, duration: .42, onUpdate: apply }, .20)   // middle lags
-      .to(front, { c: 0, duration: .42, onUpdate: apply }, .28)   // bottom last
-      .to(caps[0], { opacity: 0, duration: .06 }, .22)
-      .to(caps[1], { opacity: 1, y: 0, duration: .06 }, .30)
-      .to(caps[2], { opacity: 1, y: 0, duration: .06 }, .50)
-      .to(caps[3], { opacity: 1, y: 0, duration: .06 }, .66)
-      .to(edge,    { opacity: 0, duration: .05 }, .72)
-      // the dock: frame settles into its resting tilt, finished img on top
-      .to(film,   { rotate: -3, scale: 1, duration: .22, ease: 'power2.inOut' }, .76)
-      .to(newImg, { autoAlpha: 1, duration: .04 }, .94)
-      .to(caps,   { opacity: 0, duration: .05 }, .93);
+    const lenis = new Lenis({ lerp: 0.065, smoothWheel: true });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
   }
 
   /* ---------- marquee: GSAP scroll-scrub (nbnzia move) ---------- */

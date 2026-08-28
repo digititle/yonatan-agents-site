@@ -230,48 +230,62 @@ input, textarea, select, button { font: inherit; color: inherit; }
 .film__old, .film__new { position: absolute; inset: 0; }
 .film__new { z-index: 4; }                /* default: finished site on top (no-JS state) */
 
-/* the three strips of the NEW site — revealed by clip-path, staggered */
-.film__strip {
+/* before/after slider — drag the handle to reveal the new site (RTL: from the right) */
+.hero__shot { cursor: ew-resize; }
+.film__stage { --pos: 42; touch-action: pan-y; }
+
+.ba__new {
   position: absolute; inset: 0; z-index: 2;
   background-image: url("../img/riki-site.webp");
   background-size: 100% 100%;
-  clip-path: inset(0 0 0 100%);           /* hidden; wipe reveals from the right */
-  visibility: hidden;                     /* JS turns the film on */
+  clip-path: inset(0 0 0 calc(100% - var(--pos) * 1%));
 }
-.film__strip--a { clip-path: inset(0 0 66.7% 100%); }
-.film__strip--b { clip-path: inset(33.3% 0 33.3% 100%); }
-.film__strip--c { clip-path: inset(66.7% 0 0 100%); }
-
-.film__edge {
+.ba__divider {
   position: absolute; inset-block: 0; z-index: 3;
   inline-size: 3px;
   background: var(--navy);
-  inset-inline-start: 0;
-  opacity: 0;
-  visibility: hidden;
+  left: calc(100% - var(--pos) * 1%);
+  translate: -1px 0;
 }
-
-.film__caps {
+.ba__handle {
   position: absolute;
   inset-block-start: 50%;
-  inset-inline-end: calc(100% + 1.5rem);  /* rail on the reading side of the frame */
-  translate: 0 -50%;
-  display: none;
-  min-inline-size: 12rem;
-  text-align: end;
+  inset-inline-start: 50%;
+  translate: -50% -50%;
+  display: grid; place-items: center;
+  inline-size: 46px; block-size: 46px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  font-size: 1.25rem;
+  box-shadow: 0 6px 18px rgba(11,30,102,.4);
+  transition: scale 160ms var(--ease);
 }
-.film__cap {
-  display: block;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--ink);
-  opacity: 0;
-  transform: translateY(10px);
-  margin-block: .4rem;
-}
-.film__cap[data-cap="0"] { color: var(--ink-2); }
+.film__stage:hover .ba__handle,
+.film__stage:focus-within .ba__handle { scale: 1.1; }
 
-@media (min-width: 64rem) { .film__caps { display: block; } }
+.ba__tag {
+  position: absolute; z-index: 3;
+  inset-block-start: .75rem;
+  padding: .3rem .8rem;
+  font-size: .8125rem; font-weight: 600;
+  background: rgba(31,31,31,.75); color: #fff;
+}
+.ba__tag--old { inset-inline-end: .75rem; }    /* old shows on the LEFT (RTL: inline-end) */
+.ba__tag--new { inset-inline-start: .75rem; }  /* new is revealed from the RIGHT */
+
+/* the invisible range input IS the control — full-stage, keyboard/touch/mouse */
+.ba__range {
+  position: absolute; inset: 0; z-index: 5;
+  inline-size: 100%; block-size: 100%;
+  margin: 0; opacity: 0;
+  cursor: ew-resize;
+  direction: rtl;              /* drag left = value up = divider follows the pointer */
+}
+.ba__range:focus-visible ~ .ba__divider .ba__handle,
+.film__stage:has(.ba__range:focus-visible) .ba__handle {
+  outline: 3px solid var(--navy-hi); outline-offset: 3px;
+}
 
 .hero__foot {
   display: grid;
@@ -527,3 +541,9 @@ body.kb-open .dock { display: none; }
 .card__price span { font-family: var(--font); font-size: 1.375rem; font-weight: 700; color: var(--ink); }
 .card--pick .card__price { color: rgba(255,255,255,.78); }
 .card--pick .card__price span { color: #fff; }
+
+/* legal pages (privacy, accessibility) */
+.legal h2 { font-family: var(--display); font-weight: 400; font-size: 1.6rem; margin: 2.5rem 0 .75rem; }
+.legal ul { margin: 0 0 1.5rem; padding-inline-start: 1.25rem; color: var(--ink-2); }
+.legal li { margin-block-end: .55rem; max-inline-size: 60ch; }
+.legal a { color: var(--navy); }

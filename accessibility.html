@@ -7,21 +7,25 @@
 <meta name="description" content="הצהרת הנגישות של אתר יונתן — עיצוב ובניית אתרים לעסקים.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <a class="skip" href="#main">דלגו לתוכן הראשי</a>
 
-<header class="nav is-stuck">
-  <a class="nav__brand" href="index.html"><span>יונתן</span><i aria-hidden="true">.</i></a>
-  <a class="btn btn--sm" href="index.html">חזרה לאתר</a>
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="index.html">יונתן</a>
+    <a class="nav__cta" href="index.html">חזרה לאתר</a>
+  </div>
 </header>
 
-<main id="main" class="section" style="padding-block-start: 9rem;">
-  <p class="label">הצהרת נגישות</p>
-  <h1 class="h2">האתר נבנה<br><em>כך שיהיה נגיש.</em></h1>
+<main id="main" class="band">
+  <div class="wrap wrap--narrow">
+    <div class="bandhead">
+      <h1 class="title">הצהרת נגישות.</h1>
+    </div>
 
   <div class="legal">
     <p>
@@ -60,29 +64,17 @@
     <!-- TODO(yonatan): לעדכן לתאריך שבו האתר עולה לאוויר בפועל -->
     <p class="foot__note">הצהרה זו עודכנה לאחרונה בתאריך <span dir="ltr">28.08.2026</span>.</p>
   </div>
+  </div>
 </main>
 
 <footer class="foot">
-  <p class="foot__brand">יונתן — עיצוב ובניית אתרים לעסקים</p>
-  <p class="foot__legal">
-    <span dir="ltr">© 2026</span>
-    <a href="index.html">חזרה לדף הבית</a>
-  </p>
+  <div class="wrap">
+    <p class="foot__brand">יונתן — עיצוב ובניית אתרים לעסקים</p>
+    <p class="foot__legal"><span dir="ltr">© 2026</span> · <a href="index.html">דף הבית</a> · <a href="privacy.html">מדיניות פרטיות</a></p>
+  </div>
 </footer>
 
-<style>
-  .legal { max-inline-size: 46rem; }
-  .legal p { color: var(--ink-soft); margin: 0 0 1.5rem; }
-  .legal h2 {
-    font-family: var(--display);
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 3rem 0 1rem;
-  }
-  .legal ul { margin: 0 0 1.5rem; padding-inline-start: 1.25rem; color: var(--ink-soft); }
-  .legal li { margin-block-end: .6rem; max-inline-size: 62ch; }
-  .legal a { color: var(--gold); }
-</style>
+
 
 </body>
 </html>
