@@ -36,9 +36,35 @@
   const baStage = document.getElementById('ba-stage');
   const baRange = document.getElementById('ba-range');
   if (baStage && baRange) {
-    const setPos = () => baStage.style.setProperty('--pos', baRange.value);
-    baRange.addEventListener('input', setPos);
-    setPos();
+    const setPos = v => {
+      const p = Math.max(0, Math.min(100, v));
+      baStage.style.setProperty('--pos', p);
+      baRange.value = p;
+    };
+    // keyboard / screen reader path
+    baRange.addEventListener('input', () => setPos(+baRange.value));
+
+    // pointer path — the finger/cursor IS the divider position.
+    // Touch must start on the handle so vertical page-scrolling on the image
+    // keeps working; mouse may grab anywhere on the stage.
+    const posFromX = x => {
+      const r = baStage.getBoundingClientRect();
+      return ((r.right - x) / r.width) * 100;      // RTL: revealed from the right
+    };
+    let dragging = false;
+    baStage.addEventListener('pointerdown', e => {
+      if (e.pointerType !== 'mouse' && !e.target.closest('.ba__divider')) return;
+      dragging = true;
+      baStage.setPointerCapture(e.pointerId);
+      setPos(posFromX(e.clientX));
+      e.preventDefault();
+    });
+    baStage.addEventListener('pointermove', e => { if (dragging) setPos(posFromX(e.clientX)); });
+    const stop = () => { dragging = false; };
+    baStage.addEventListener('pointerup', stop);
+    baStage.addEventListener('pointercancel', stop);
+
+    setPos(+baRange.value);
   }
 
   /* Lenis smoothing, wired into GSAP's ticker */

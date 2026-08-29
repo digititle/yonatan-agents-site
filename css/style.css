@@ -248,6 +248,7 @@ input, textarea, select, button { font: inherit; color: inherit; }
   translate: -1px 0;
 }
 .ba__handle {
+  touch-action: none;          /* horizontal drags on the handle belong to the slider */
   position: absolute;
   inset-block-start: 50%;
   inset-inline-start: 50%;
@@ -279,8 +280,8 @@ input, textarea, select, button { font: inherit; color: inherit; }
   position: absolute; inset: 0; z-index: 5;
   inline-size: 100%; block-size: 100%;
   margin: 0; opacity: 0;
-  cursor: ew-resize;
-  direction: rtl;              /* drag left = value up = divider follows the pointer */
+  pointer-events: none;        /* pointers are handled by the stage; range = keyboard/SR only */
+  direction: rtl;
 }
 .ba__range:focus-visible ~ .ba__divider .ba__handle,
 .film__stage:has(.ba__range:focus-visible) .ba__handle {
